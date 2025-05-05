@@ -5,19 +5,80 @@
   text-align: center;
 }
 
+/* Links */
+
 .main{
   display: flex;
   flex-direction: column;
-
 }
 
 .links{
   display: flex;
-  gap: 20px;
+  gap: 50px;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .links a {
  text-decoration: none;
+ color:aqua;
+ font-size: 20px;
+}
+
+/* home page */
+
+.home img{
+  border: 3px solid;
+  border-radius: 10px;
+}
+
+/* about page */
+
+.about{
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: justify;
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.about h1{
+  text-align: center;
+}
+
+/* Facts Page */
+
+.notFound h2 {
+  font-size: 40px;
+  color: red;
+}
+
+.notFound h3 {
+  font-size: 30px;
+  color: red;
+}
+
+.notFound  a{
+  font-size: 20px;
+  text-decoration: none;
+  color: aqua;
+}
+
+.facts{
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.facts h1{
+  font-size: 40px;
+  color:rgb(24, 206, 206);
+  text-decoration: underline 4px;
+  text-underline-offset: 10px;
+}
+
+.facts h2{
+  font-size: 30px;
+  color: aquamarine;
+  line-height: 50px;
 }

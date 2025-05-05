@@ -1,8 +1,7 @@
 import AboutPage from "./assets/pages/AboutPage";
-import MainPage from "./assets/pages/MainPage";
 import Links from "./assets/layouts/Links";
 import HomePage from "./assets/pages/HomePage";
-import ParamPage from "./assets/pages/ParamPage";
+import FactsPage from "./assets/pages/FactsPage";
 import ErrorPage from "./assets/pages/ErrorPage"
 
 const router = [
@@ -18,10 +17,6 @@ const router = [
       },
       //regular route
       {
-        element: <MainPage />,
-        path: "main",
-      },
-      {
         element: <AboutPage />,
         path: "about",
       },
@@ -29,7 +24,7 @@ const router = [
   },
   //regular route/ parametrized
   {
-    element: <ParamPage />,
+    element: <FactsPage />,
     path: ":id",
   },
   //wildcard route

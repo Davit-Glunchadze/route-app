@@ -1,7 +1,10 @@
+import michael from "../photos/michael.jpg"
+
 const HomePage = () => {
     return (
-        <div className="divs">
-            <h1>This is a Home Page</h1>
+        <div className="home">
+            <h1>Michael Jackson</h1>
+            <img src={michael} alt="photo" />
         </div>
     )
 }
