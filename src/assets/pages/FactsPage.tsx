@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useFacts } from "../contexts/FactsContext";
 
 const FactsPage = () => {
@@ -7,7 +7,7 @@ const FactsPage = () => {
 
   const fact = data.find((fact) => String(fact.id) === id);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>L O A D I N G  .  .  .</p>;
   if (error) return <p style={{ color: "red" }}>Error: {error}</p>;
 
   if (!fact) {

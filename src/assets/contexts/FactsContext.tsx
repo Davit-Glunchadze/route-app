@@ -1,12 +1,12 @@
-
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { Fact, childrenProps, contextValueProps } from "../../components/types";
 
-const FactsContext = createContext(null);
+const FactsContext = createContext<contextValueProps | null>(null);
 
-const FactsContextProvider = ({ children }) => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const FactsContextProvider = ({ children }:childrenProps) => {
+  const [data, setData] = useState<Fact[]>([]);
+  const [loading, setLoading] = useState<Boolean>(true);
+  const [error, setError] = useState<boolean | null>(null);
 
   useEffect(() => {
     fetch("/facts/Facts.json")
@@ -27,7 +27,10 @@ const FactsContextProvider = ({ children }) => {
       });
   }, []);
 
-  const contextValue = useMemo(() => ({ data, loading, error }), [data, loading, error]);
+  const contextValue = useMemo(
+    () => ({ data, loading, error,}),
+    [data, loading, error]
+  );
 
   return (
     <FactsContext.Provider value={contextValue}>
@@ -38,7 +41,8 @@ const FactsContextProvider = ({ children }) => {
 
 export const useFacts = () => {
   const context = useContext(FactsContext);
-  if (!context) throw new Error("useFacts must be used within a FactsContextProvider");
+  if (!context)
+    throw new Error("useFacts must be used within a FactsContextProvider");
   return context;
 };
 
